@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-title>People</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="presentPopover($event)">
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar color="primary">
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!--button ion-button (click)="insert()" > Insert</button-->
+  <!--button ion-button (click)="select()" > Select</button-->
+
+  <ion-list [virtualScroll]="items" approxItemHeight="60px" >
+    <button ion-item (click)="buttonClick(item)" *virtualItem="let item">
+      <ion-avatar item-start>
+      <!--div class="badge">{{item.name | firstLetter }}</div-->
+      <span class="avatar" [ngClass]="{'pink'   : (item.cpf%10 == 1),
+                                       'purple' : (item.cpf%10 == 2),
+                                       'teal'   : (item.cpf%10 == 3),
+                                       'cyan'   : (item.cpf%10 == 4),
+                                       'lime'   : (item.cpf%10 == 5),
+                                       'grey'   : (item.cpf%10 == 6),
+                                       'red'    : (item.cpf%10 == 7),
+                                       'darkblue':(item.cpf%10 == 8),
+                                       'orange' : (item.cpf%10 == 9),
+                                       'green'  : (item.cpf%10 == 0) }" >
+        {{item.name | firstLetter }}
+      </span>
+      </ion-avatar>
+      <p>{{item.name}}</p>
+      <ion-icon *ngIf="item.starred" name="star" color="amber" item-end></ion-icon>
+    </button>
+  </ion-list>
+
+</ion-content>

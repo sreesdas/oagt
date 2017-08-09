@@ -1,0 +1,95 @@
+<ion-header>
+
+  <ion-navbar color={{emp.theme}}>
+    <ion-title>Details</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="{{starTheme}}" (click)="setStar()">
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <div class="bg" [ngClass]="emp.theme">
+    <div class="container">
+      <span class="badge" [ngClass]="emp.theme" >
+        {{ emp.letter }}
+      </span>
+    </div>
+    <p class="name" > {{emp.name}}</p>
+    <p class="desig"> {{emp.designation}}</p>
+  </div>
+
+  <button ion-item (click)="call(emp.mobile)">
+    <ion-avatar item-start>
+      <img src="assets/img/call.png">
+    </ion-avatar>
+    <h2>{{emp.mobile}}</h2>
+    <p>Mobile</p>
+    <a button color={{emp.theme}} ion-button large clear item-end [href]="sanitize('sms:' + emp.mobile)">
+      <ion-icon name="text"></ion-icon>
+    </a>
+  </button>
+
+  <button ion-item *ngIf="emp.epabx_office && emp.epabx_office != '-'" (click)="call(emp.epabx_office)">
+    <ion-avatar item-start>
+      <img src="assets/img/work.png">
+    </ion-avatar>
+    <h2>{{emp.epabx_office}}</h2>
+    <p>Office</p>
+    <button color={{emp.theme}} ion-button large clear item-end>
+      <ion-icon name="text"></ion-icon>
+    </button>
+  </button>
+
+  <button ion-item *ngIf="emp.bsnl_office && emp.bsnl_office != '-'" (click)="call(emp.bsnl_office)">
+    <ion-avatar item-start>
+    </ion-avatar>
+    <h2>{{emp.bsnl_office}}</h2>
+    <p>Office BSNL</p>
+    <button color={{emp.theme}} ion-button large clear item-end>
+      <ion-icon name="text"></ion-icon>
+    </button>
+  </button>
+
+  <button *ngIf="emp.epabx_home && emp.epabx_home != '-'" ion-item (click)="call(emp.epabx_home)">
+    <ion-avatar item-start>
+      <img src="assets/img/home.png">
+    </ion-avatar>
+    <h2>{{emp.epabx_home}}</h2>
+    <p>Home</p>
+    <button color={{emp.theme}} ion-button large clear item-end>
+      <ion-icon name="text"></ion-icon>
+    </button>
+  </button>
+
+  <button ion-item *ngIf="emp.bsnl_home && emp.bsnl_home != '-'" (click)="call(emp.bsnl_home)">
+    <ion-avatar item-start>
+
+    </ion-avatar>
+    <h2>{{emp.bsnl_home}}</h2>
+    <p>Home BSNL</p>
+    <button color={{emp.theme}} ion-button large clear item-end >
+      <ion-icon name="text"></ion-icon>
+    </button>
+  </button>
+
+  <ion-item *ngIf="emp.cpf > 1000">
+    <br />
+    <h3><b>About {{emp.firstname}}</b></h3>
+    <br />
+
+    <h2>CPF : {{emp.cpf}} </h2>
+    <p> {{emp.discipline}} <p>
+    <p> BIRTHDAY : {{emp.birthday}} </p>
+
+
+  </ion-item>
+
+  <ion-fab right bottom>
+    <button ion-fab color={{emp.theme}} (click)="editDetails()"><ion-icon name="create"></ion-icon></button>
+  </ion-fab>
+</ion-content>

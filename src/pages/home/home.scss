@@ -1,0 +1,64 @@
+page-home {
+  .item-md p {
+    font-size: 4.5vw;
+  }
+  .avatar {
+    height: 10vw;
+    width: 10vw;
+    font-size: 6vw;
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%; /* may require vendor prefixes */
+    background: #9c27b0;
+  }
+  .pink {
+    background: #e91e63;
+  }
+  .purple {
+    background: #9C27B0;
+  }
+  .teal {
+    background: #009688;
+  }
+  .cyan {
+    background: #00BCD4;
+  }
+  .lime {
+    background: #C0CA33;
+  }
+  .grey {
+    background : #607d8b;
+  }
+  .red {
+    background: #F44336;
+  }
+  .darkblue {
+    background: #673AB7;
+  }
+  .orange {
+    background: #FF5722;
+  }
+  .green {
+    background: #4CAF50
+  }
+  .amber {
+    background : #FFC107;
+  }
+
+  .item p {
+    font-size : 4.5vw;
+    color : #1e1e1e;
+  }
+  .list .item-block .item-inner {
+    border-bottom: 0px;
+  }
+  .item .item-block .item-inner {
+    padding-right: 8px;
+    border-bottom: 0px;
+  }
+  .list-ios > .item-block:first-child {
+    border-top: 0px;
+  }
+}

@@ -1,0 +1,68 @@
+page-details {
+  .bg {
+    //background : #9c27b0; //#F5F5F5;
+    min-height: 30vh;
+    //text-align: center;
+  }
+  .name {
+    font-size: 6vw;
+    color: #fff;
+    padding-left : 10px;
+    margin-top : 5px;
+    margin-bottom: 0px;
+  }
+  .desig {
+    margin-top : 1px;
+    font-size: 4vw;
+    color: #fff;
+    padding-left : 10px;
+  }
+  .container {
+    padding-left: 38vw;
+    padding-top: 5vw;
+  }
+  .badge {
+    height: 25vw;
+    width: 25vw;
+    font-size: 25vw;
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%; /* may require vendor prefixes */
+    background: #9c27b0;
+  }
+  .pink {
+    background: #e91e63;
+  }
+  .purple {
+    background: #9C27B0;
+  }
+  .teal {
+    background: #009688;
+  }
+  .cyan {
+    background: #00BCD4;
+  }
+  .lime {
+    background: #C0CA33;
+  }
+  .grey {
+    background : #607d8b;
+  }
+  .red {
+    background: #F44336;
+  }
+  .darkblue {
+    background: #673AB7;
+  }
+  .orange {
+    background: #FF5722;
+  }
+  .green {
+    background: #4CAF50
+  }
+  .amber {
+    background : #FFC107;
+  }
+}

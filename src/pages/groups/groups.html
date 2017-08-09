@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Groups</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="httpFetch('all')">
+          <ion-icon name="refresh"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	
+	<ion-list *ngIf="itemtype == 'groups'" >
+		<button ion-item *ngFor="let item of items" (click)="getGroupMembers(item.id)" >{{item.name}}</button>
+	</ion-list>
+
+	<ion-list *ngIf="itemtype == 'people'" >
+		<button ion-item *ngFor="let item of items" (click)="goToDetails(item)">{{item.name}}</button>
+	</ion-list>
+	
+	<button ion-button color="primary" block outline *ngIf="itemtype == 'people'" (click)="httpFetch('all')"> 
+		Back to Groups
+	</button>
+
+</ion-content>
