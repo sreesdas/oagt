@@ -1,26 +1,29 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+This is a telephone directory project based on [Ionic](http://ionicframework.com/docs/) framework (v3.7)
 
-## How to use this template
+## How to use this project
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
-
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+*This template does not work on its own*. You have to install the plugins after clonning this repo to your PC.
 
 ### With the Ionic CLI:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+After clonning the repo `oagt`, enter the following commands in sequence as shown below :
 
 ```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+$ cd oagt
+$ ionic cordova plugin add call-number
+$ npm install --save @ionic-native/call-number
 
-Then, to run it, cd into `myBlank` and run:
+```
+This is necessary otherwise `call number` plugin will throw an error even if we add it to package.json
+
+Now to add the plugins, run :
 
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+$ npm install
 ```
+and finally run it in browser or an android device using either of these commands : 
 
-Substitute ios for android if not on a Mac.
-
+```bash
+$ ionic serve
+$ ionic cordova run android
+```

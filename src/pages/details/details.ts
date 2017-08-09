@@ -42,18 +42,17 @@ export class DetailsPage {
   }
 
   setStar() {
-    
     if(this.emp.starred == 0){
-      this.dbo.setStar(1,this.emp.cpf);  
+      this.dbo.setStar(1,this.emp.cpf);
       this.starTheme = 'amber';
-      this.emp.starred = 1;
+      this.emp.starred =  1;
     }
     else{
-      this.dbo.setStar(0,this.emp.cpf); 
-      this.starTheme = 'light'; 
+      this.dbo.setStar(0,this.emp.cpf);
+      this.starTheme = 'light';
       this.emp.starred = 0;
     }
-    
+
   }
 
   editDetails(){
@@ -76,8 +75,8 @@ export class DetailsPage {
     this.caller.callNumber(number, true)
     .then(() => console.log('Launched dialer!'))
     .catch(() => console.log('Error launching dialer'));
-  
-    
+
+
   }
 
 }
