@@ -35,6 +35,8 @@ export class DetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
+    this.emp.epabx_office = '3311';
+    this.emp.epabx_home   = '4040';
   }
 
   sanitize(url:string) {
@@ -71,7 +73,7 @@ export class DetailsPage {
     else if(len == 10){
       number = '0' + number;
     }
-    console.log(number);
+    console.log("calling " + number);
     this.caller.callNumber(number, true)
     .then(() => console.log('Launched dialer!'))
     .catch(() => console.log('Error launching dialer'));

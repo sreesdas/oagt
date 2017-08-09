@@ -22,7 +22,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private platform : Platform, private http : Http,
               private dbo : DbProvider, private storage : NativeStorage, private popover : PopoverController) {
-    
+
     platform.ready().then(()=>{
       storage.getItem('savedItem')
         .then(
@@ -34,12 +34,13 @@ export class HomePage {
                     navCtrl.setRoot('LoginPage');
                    }
         );
-      this.dbo.createDatabase().then(()=>{  
+      this.dbo.createDatabase().then(()=>{
       this.select();
         console.log(">> Checking for updates!");
         this.checkForUpdates();
-      }); 
+      });
     });
+    
 
   }
 
@@ -82,7 +83,7 @@ export class HomePage {
       this.items = this.init.filter((item) => {
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       });
-      
+
       this.items = this.items.concat(this.init.filter((item) => {
         return (item.cpf.toLowerCase().indexOf(val.toLowerCase()) > -1);
       }));

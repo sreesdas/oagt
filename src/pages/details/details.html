@@ -23,16 +23,18 @@
     <p class="desig"> {{emp.designation}}</p>
   </div>
 
-  <button ion-item (click)="call(emp.mobile)">
+  <ion-item style="padding:0px">
+  <button no-lines ion-item (click)="call(emp.mobile)">
     <ion-avatar item-start>
       <img src="assets/img/call.png">
     </ion-avatar>
     <h2>{{emp.mobile}}</h2>
     <p>Mobile</p>
-    <a button color={{emp.theme}} ion-button large clear item-end [href]="sanitize('sms:' + emp.mobile)">
-      <ion-icon name="text"></ion-icon>
-    </a>
   </button>
+  <a button color={{emp.theme}} ion-button large clear item-end [href]="sanitize('sms:' + emp.mobile)">
+    <ion-icon name="text"></ion-icon>
+  </a>
+  </ion-item>
 
   <button ion-item *ngIf="emp.epabx_office && emp.epabx_office != '-'" (click)="call(emp.epabx_office)">
     <ion-avatar item-start>
