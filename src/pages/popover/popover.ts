@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-popover',
@@ -7,7 +8,16 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
 })
 export class PopoverPage {
 
-  constructor(public navCtrl: NavController,public viewCtrl: ViewController, public navParams: NavParams) {
+  cpf : string;
+  constructor(public navCtrl: NavController,public viewCtrl: ViewController,
+              public storage: NativeStorage , public navParams: NavParams) {
+    this.storage.getItem('savedItem')
+      .then(
+        (data) => {
+                  console.log("Logged In with " + data.cpf);
+                  this.cpf = data.cpf;
+                  }
+      );
   }
 
   ionViewDidLoad() {
@@ -20,7 +30,7 @@ export class PopoverPage {
 
   goto(pageName){
     console.log(">>" + this.navParams.get('cpf'));
-    this.navCtrl.push(pageName, { cpf : this.navParams.get('cpf') });
+    this.navCtrl.push(pageName, { cpf : this.cpf });
 
   }
 }
