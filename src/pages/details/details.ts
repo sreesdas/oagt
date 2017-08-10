@@ -35,8 +35,6 @@ export class DetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
-    this.emp.epabx_office = '3311';
-    this.emp.epabx_home   = '4040';
   }
 
   sanitize(url:string) {
