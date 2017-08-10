@@ -22,7 +22,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private platform : Platform, private http : Http,
               private dbo : DbProvider, private storage : NativeStorage, private popover : PopoverController) {
-/*
+
     this.platform.ready().then(()=>{
       this.storage.getItem('savedItem')
         .then(
@@ -41,7 +41,7 @@ export class HomePage {
       });
     });
 
-*/
+
 
   }
 
