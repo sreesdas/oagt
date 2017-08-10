@@ -20,6 +20,7 @@ export class PopoverPage {
 
   goto(pageName){
     console.log(">>" + this.navParams.get('cpf'));
-  	this.navCtrl.push('GroupsPage', { cpf : this.navParams.get('cpf') }); 
+    this.navCtrl.push(pageName, { cpf : this.navParams.get('cpf') });
+
   }
 }
