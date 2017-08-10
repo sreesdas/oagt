@@ -24,7 +24,7 @@ export class EditPage {
     let url = "http://sreenathsdas.16mb.com/oagtv2/request.php?cpf=" + this.contact.cpf + "&mobile=" + this.contact.mobile +
       "&epabx_office=" + this.contact.epabx_office + "&epabx_home=" + this.contact.epabx_home;
     this.http.get(url).map(res => res.json()).subscribe( data => {
-      console.log(data);
+      this.navCtrl.pop();
     });
 
   }
