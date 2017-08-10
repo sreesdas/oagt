@@ -23,8 +23,8 @@ export class HomePage {
   constructor(public navCtrl: NavController, private platform : Platform, private http : Http,
               private dbo : DbProvider, private storage : NativeStorage, private popover : PopoverController) {
 
-    platform.ready().then(()=>{
-      storage.getItem('savedItem')
+    this.platform.ready().then(()=>{
+      this.storage.getItem('savedItem')
         .then(
           (data) => {
                     console.log("Logged In with " + data.cpf);
@@ -40,7 +40,7 @@ export class HomePage {
         this.checkForUpdates();
       });
     });
-    
+
 
   }
 
