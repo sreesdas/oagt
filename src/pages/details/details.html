@@ -20,7 +20,7 @@
       </span>
     </div>
     <p class="name" > {{emp.name}}</p>
-    <p class="desig"> {{emp.designation}}</p>
+    <p *ngIf="emp.designation != '-'" class="desig"> {{emp.designation}}</p>
   </div>
 
   <ion-item style="padding:0px">
