@@ -30,7 +30,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  private login(){
+  public login(){
     let loading = this.loadingCtrl.create({
       content: 'Updating contacts, please wait..'
     });
@@ -52,10 +52,10 @@ export class LoginPage {
                 error => console.error('Error storing item', error)
               );
             });
-            
+
           }
           else if(dbstatus == "noUpdate") {
-            alert("Error fetching data. Please contact admin!"); 
+            alert("Error fetching data. Please contact admin!");
           }
         }, (error)=>{
           alert('Error in registration. Please reopen the App!');
