@@ -39,7 +39,6 @@
         "ionic-angular": "3.5.2",
         "ionic-plugin-keyboard": "^2.2.1",
         "ionicons": "3.0.0",
-        "mx.ferreyra.callnumber": "~0.0.2",
         "rxjs": "5.4.0",
         "sw-toolbox": "3.6.0",
         "zone.js": "0.8.12"
@@ -61,8 +60,7 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
             "ionic-plugin-keyboard": {},
-            "cordova-plugin-nativestorage": {},
-            "mx.ferreyra.callnumber": {}
+            "cordova-plugin-nativestorage": {}
         },
         "platforms": [
             "android"
