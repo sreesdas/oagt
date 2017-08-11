@@ -21,7 +21,7 @@ export class HomePage {
   private init : any;
   private username : any;
 
-  constructor(public navCtrl: NavController, private platform : Platform, private http : Http, private onesignal : OneSignal,
+  constructor(public navCtrl: NavController, private platform : Platform, private http : Http, private oneSignal : OneSignal,
               private dbo : DbProvider, private storage : NativeStorage, private popover : PopoverController) {
 
     this.platform.ready().then(()=>{

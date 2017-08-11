@@ -10,7 +10,7 @@ import { PopoverPage } from '../pages/popover/popover';
 
 import { SQLite } from '@ionic-native/sqlite';
 import { DbProvider } from '../providers/db/db';
-
+import { OneSignal } from '@ionic-native/onesignal';
 import { HttpModule } from '@angular/http';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { FirstLetterPipe } from '../pipes/first-letter/first-letter';
@@ -41,6 +41,7 @@ import { CallNumber } from '@ionic-native/call-number';
     DbProvider,
     NativeStorage,
     CallNumber,
+    OneSignal,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
