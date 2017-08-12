@@ -26,16 +26,16 @@ export class HomePage {
 
     this.platform.ready().then(()=>{
 		
-		this.oneSignal.startInit('ee0a38d4-d62f-4a3c-b2c4-4aa18e821003', '867730921447');
-		this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
-		this.oneSignal.handleNotificationReceived().subscribe(() => {
-		 // do something when notification is received
-		});
+  		this.oneSignal.startInit('ee0a38d4-d62f-4a3c-b2c4-4aa18e821003', '867730921447');
+  		this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+  		this.oneSignal.handleNotificationReceived().subscribe(() => {
+  		 // do something when notification is received
+  		});
 
-		this.oneSignal.handleNotificationOpened().subscribe(() => {
-		  // do something when a notification is opened
-		});
-		this.oneSignal.endInit();
+  		this.oneSignal.handleNotificationOpened().subscribe(() => {
+  		  // do something when a notification is opened
+  		});
+  		this.oneSignal.endInit();
 		
       this.storage.getItem('savedItem')
         .then(
@@ -54,16 +54,6 @@ export class HomePage {
       });
     });
 
-
-
-  }
-
-  doRefresh(refresher) {
-   this.dbo.readValues().then(res => {
-      this.items = res;
-      this.init = res;
-      refresher.complete();
-    })
   }
 
   checkForUpdates() {
