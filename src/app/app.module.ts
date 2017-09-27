@@ -15,6 +15,7 @@ import { HttpModule } from '@angular/http';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { FirstLetterPipe } from '../pipes/first-letter/first-letter';
 import { CallNumber } from '@ionic-native/call-number';
+import { Contacts } from '@ionic-native/contacts';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { CallNumber } from '@ionic-native/call-number';
     DbProvider,
     NativeStorage,
     CallNumber,
+    Contacts,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

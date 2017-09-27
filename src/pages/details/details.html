@@ -92,6 +92,10 @@
   </ion-item>
 
   <ion-fab right bottom>
-    <button ion-fab color={{emp.theme}} (click)="editDetails()"><ion-icon name="create"></ion-icon></button>
+    <button ion-fab color={{emp.theme}}><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="editDetails()"><ion-icon name="create" ></ion-icon></button>
+      <button ion-fab (click)="saveContact()"><ion-icon name="person-add" ></ion-icon></button>
+    </ion-fab-list>
   </ion-fab>
 </ion-content>

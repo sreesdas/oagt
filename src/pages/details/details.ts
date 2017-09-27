@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, IonicPage } from 'ionic-angular';
+import { AlertController, ToastController } from 'ionic-angular';
+
 import { DbProvider } from '../../providers/db/db';
 import { CallNumber } from '@ionic-native/call-number';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
 
 @IonicPage()
 @Component({
@@ -16,7 +19,8 @@ export class DetailsPage {
   private themes = ["green","pink","purple","teal","cyan","lime","grey","red","darkblue","orange","amber"]
 
   constructor(public navCtrl: NavController, public caller : CallNumber, private sanitizer:DomSanitizer,
-               public dbo : DbProvider, public navParams: NavParams) {
+              private alertCtrl : AlertController, private toastCtrl : ToastController,
+               public dbo : DbProvider, public navParams: NavParams, private contacts: Contacts) {
 
     this.emp = navParams.get("item");
     console.log(this.emp.cpf);
@@ -58,7 +62,59 @@ export class DetailsPage {
   editDetails(){
     this.navCtrl.push('EditPage', {item : this.emp});
   }
+	
+  saveContact() {
+	  
+    let alert = this.alertCtrl.create({
+    title: 'Save Contact',
+    message: 'Do you want to save this contact to your phone?',
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Save',
+        handler: () => {
+          this.saveThisContact();
+        }
+      }
+    ]
+  });
+  alert.present();
 
+  }
+
+  saveThisContact() {
+    let contact: Contact = this.contacts.create();
+
+    contact.name = new ContactName(null, this.emp.name, '');
+    contact.phoneNumbers = [new ContactField('mobile', this.emp.mobile)];
+    contact.save().then(
+      () => { this.showToast();
+            },
+      (error: any) => console.error('Error saving contact.', error)
+    );
+  }
+
+  showToast(){
+    
+    let toast = this.toastCtrl.create({
+      message: 'Contact saved successfully',
+      duration: 2000,
+      position: 'bottom'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
+  }
+	
   call(number){
 
     let len = number.length;
