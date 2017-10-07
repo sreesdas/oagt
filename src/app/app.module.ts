@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PopoverPage } from '../pages/popover/popover';
+import { NotificationPage } from '../pages/notification/notification';
 
 import { SQLite } from '@ionic-native/sqlite';
 import { DbProvider } from '../providers/db/db';
@@ -16,12 +17,14 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { FirstLetterPipe } from '../pipes/first-letter/first-letter';
 import { CallNumber } from '@ionic-native/call-number';
 import { Contacts } from '@ionic-native/contacts';
+import { OneSignal } from '@ionic-native/onesignal';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     PopoverPage,
+    NotificationPage,
     FirstLetterPipe
   ],
   imports: [
@@ -33,7 +36,8 @@ import { Contacts } from '@ionic-native/contacts';
   entryComponents: [
     MyApp,
     HomePage,
-    PopoverPage
+    PopoverPage,
+    NotificationPage
   ],
   providers: [
     StatusBar,
@@ -43,6 +47,7 @@ import { Contacts } from '@ionic-native/contacts';
     NativeStorage,
     CallNumber,
     Contacts,
+    OneSignal,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
