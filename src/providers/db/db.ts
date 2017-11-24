@@ -84,6 +84,7 @@ export class DbProvider {
                               mobile : data.rows.item(i).MOBILE,
                               starred : data.rows.item(i).STARRED,
                               search_tag : data.rows.item(i).SEARCH_TAG,
+                              designation : data.rows.item(i).DESIGNATION,
                               name: data.rows.item(i).NAME });
             }
         }

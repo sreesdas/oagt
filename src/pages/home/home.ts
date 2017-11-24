@@ -7,8 +7,6 @@ import { DbProvider } from '../../providers/db/db';
 import { Platform } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 
-import { NotificationPage } from '../notification/notification';
-import { OneSignal } from '@ionic-native/onesignal';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -22,37 +20,22 @@ export class HomePage {
   private init : any;
   private username : any;
 
-  constructor(public navCtrl: NavController, private platform : Platform, private http : Http, private oneSignal : OneSignal,
+  constructor(public navCtrl: NavController, private platform : Platform, private http : Http,
               private dbo : DbProvider, private storage : NativeStorage, private popover : PopoverController) {
 
     this.platform.ready().then(()=>{
-
-      this.oneSignal.startInit('ee0a38d4-d62f-4a3c-b2c4-4aa18e821003', '867730921447');
-      this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
-      this.oneSignal.handleNotificationReceived().subscribe(() => {
-       // do something when notification is received
-      });
-      this.oneSignal.handleNotificationOpened().subscribe((data) => {
-        // do something when a notification is opened
-
-        this.navCtrl.push(NotificationPage, { title : data.notification.payload.title, 
-                                              body  : data.notification.payload.body});
-      });
-      this.oneSignal.endInit();
-
       this.storage.getItem('savedItem')
         .then(
           (data) => {
                     console.log("Logged In with " + data.cpf);
                     this.username = data.cpf;
-                    this.oneSignal.sendTag("CPFNO",data.cpf);
                     },
           error  =>{
                     navCtrl.setRoot('LoginPage');
                    }
         );
       this.dbo.createDatabase().then(()=>{
-        this.select();
+      this.select();
         console.log(">> Checking for updates!");
         this.checkForUpdates();
       });
@@ -111,7 +94,7 @@ export class HomePage {
       }));
 
       this.items = this.items.concat(this.init.filter((item) => {
-        return (item.search_tag.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.designation.toLowerCase().indexOf(val.toLowerCase()) > -1);
       }));
 
     }
