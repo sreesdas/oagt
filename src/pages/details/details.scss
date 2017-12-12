@@ -5,6 +5,24 @@ page-details {
     //text-align: center;
   }
 
+  .fab-with-label {
+    overflow: visible;
+    contain: layout;
+  }
+
+  ion-fab ion-label {
+    position: absolute;
+    top: -8px;
+    right: 40px;
+
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    line-height: 24px;
+    padding: 4px 8px;
+    border-radius: 4px;
+
+  }
+
   .name {
     font-size: 6vw;
     color: #fff;

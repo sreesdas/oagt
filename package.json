@@ -39,16 +39,16 @@
     "cordova-plugin-splashscreen": "^4.1.0",
     "cordova-plugin-statusbar": "^2.3.0",
     "cordova-plugin-whitelist": "^1.3.3",
-    "cordova-sqlite-storage": "^2.1.2",
+    "cordova-sqlite-storage": "^2.1.3",
     "ionic-angular": "3.5.2",
     "ionic-plugin-keyboard": "^2.2.1",
     "ionicons": "3.0.0",
-    "onesignal-cordova-plugin": "^2.2.2",
+    "mx.ferreyra.callnumber": "0.0.2",
+    "onesignal-cordova-plugin": "^2.2.4",
     "rxjs": "5.4.0",
     "superagent": "^3.6.0",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.12",
-    "mx.ferreyra.callnumber": "~0.0.2"
+    "zone.js": "0.8.12"
   },
   "devDependencies": {
     "@ionic/app-scripts": "2.0.2",
@@ -68,7 +68,8 @@
       "cordova-plugin-nativestorage": {},
       "cordova-plugin-contacts": {},
       "onesignal-cordova-plugin": {},
-      "mx.ferreyra.callnumber": {}
+      "mx.ferreyra.callnumber": {},
+      "call-number": {}
     },
     "platforms": [
       "android"

@@ -41,8 +41,6 @@ export class HomePage {
       });
     });
 
-
-
   }
 
   doRefresh(refresher) {
