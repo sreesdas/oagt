@@ -22,7 +22,7 @@
   <!--button ion-button (click)="select()" > Select</button-->
 
   <ion-list [virtualScroll]="items" approxItemHeight="60px" >
-    <button ion-item (click)="buttonClick(item)" *virtualItem="let item">
+    <button ion-item (click)="buttonClick(item)" *virtualItem="let item" >
       <ion-avatar item-start>
       <!--div class="badge">{{item.name | firstLetter }}</div-->
       <span class="avatar" [ngClass]="{'pink'   : (item.cpf%10 == 1),

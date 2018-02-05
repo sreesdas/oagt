@@ -75,7 +75,7 @@ export class DbProvider {
 
   public readValues() {
     return new Promise(( resolve , reject ) => {
-      this.db.executeSql('SELECT * FROM tbl_employee ORDER BY STARRED DESC, NAME ASC', {})
+      this.db.executeSql("SELECT * FROM tbl_employee WHERE DESIGNATION != 'RETIRED' ORDER BY STARRED DESC, NAME ASC", {})
       .then((data) => {
         let result = [];
         if(data.rows.length > 0) {
