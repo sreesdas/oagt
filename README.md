@@ -27,3 +27,8 @@ and finally run it in browser or an android device using either of these command
 $ ionic serve
 $ ionic cordova run android
 ```
+for a production build, use the --prod flag and for release build, add --release
+
+```bash
+$ ionic cordova build android --prod --release
+```
